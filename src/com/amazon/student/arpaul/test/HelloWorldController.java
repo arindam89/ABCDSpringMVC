@@ -1,20 +1,17 @@
 package com.amazon.student.arpaul.test;
 
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.ModelAndView;
+import java.io.IOException;
+import java.util.Locale;
 
-import com.github.jknack.handlebars.Handlebars;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
 
  
 @Controller
 public class HelloWorldController {
- 
     @RequestMapping("/hello")
-    public String helloWorld() {
- 
-        String message = "Hello World, Spring 3.0!";
-        return "hello";
-        //return "hello";
+    public void helloWorld(Model model) throws IOException {
+    	model.addAttribute("name", HelloWorldController.class.getSimpleName());
     }
 }
