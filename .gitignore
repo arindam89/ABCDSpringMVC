@@ -1,0 +1,6 @@
+build
+*.class
+.metadata
+.classpath
+.project
+.DS_Store
